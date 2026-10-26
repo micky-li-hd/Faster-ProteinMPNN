@@ -1,0 +1,9 @@
+{
+  "LICENSE": "82009d25ce585631f452b2b24589bdb29c559ccfefa2f200ef312ed5b501a586",
+  "README.md": "e0fe7f94b444507da0f0e9e118a6033bf85193e988410676693883e088c41ff1",
+  "proteinmpnn-training-runtime.tar.gz": "a42d7128a3d96de8de1ef19873d3fc665cdcc23db480689cf60b3b5aca22d898",
+  "proteinmpnn-training.patch": "c7824c71d01643bbf1ebf21892e26271533bcac25edb119d33542d6cde75f1ba",
+  "run_six_epoch.sh": "f29438f249db13057927fa94a48ac00df908c5dd48fc8cd88dde82feb6092a8d",
+  "six_epoch_evidence.json": "4c17065aa0efce98086fb4e7077f2c502072755d04ee01a5334c2d4874b931bf",
+  "six_epoch_recipe.json": "814b08e6d00d72715078d99ce399494d271082e28bf0075d53bcc77d636e6173"
+}

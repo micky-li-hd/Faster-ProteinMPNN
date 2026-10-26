@@ -1,0 +1,218 @@
+{
+  "reference1": {
+    "RESULT": {
+      "status": "PROCESS_COMPLETED",
+      "process_seconds": 3316.2157702185214,
+      "four_gate_certified": false,
+      "quality_accepted": false,
+      "scope": "Process wall time including cold compile, data loading, validation and checkpoint writing; not a speedup result."
+    },
+    "AUDIT": {
+      "status": "COMPLETE_FINITE_ARTIFACTS",
+      "epochs": [
+        {
+          "epoch": 1,
+          "step": 1493,
+          "seconds": 475.0,
+          "train_perplexity": 13.258,
+          "valid_perplexity": 9.716,
+          "train_accuracy": 0.204,
+          "valid_accuracy": 0.293
+        },
+        {
+          "epoch": 2,
+          "step": 2986,
+          "seconds": 438.5,
+          "train_perplexity": 9.763,
+          "valid_perplexity": 8.164,
+          "train_accuracy": 0.293,
+          "valid_accuracy": 0.35
+        },
+        {
+          "epoch": 3,
+          "step": 4482,
+          "seconds": 439.3,
+          "train_perplexity": 8.543,
+          "valid_perplexity": 7.073,
+          "train_accuracy": 0.334,
+          "valid_accuracy": 0.394
+        },
+        {
+          "epoch": 4,
+          "step": 5978,
+          "seconds": 468.2,
+          "train_perplexity": 7.585,
+          "valid_perplexity": 6.508,
+          "train_accuracy": 0.372,
+          "valid_accuracy": 0.418
+        },
+        {
+          "epoch": 5,
+          "step": 7474,
+          "seconds": 440.3,
+          "train_perplexity": 7.112,
+          "valid_perplexity": 6.053,
+          "train_accuracy": 0.391,
+          "valid_accuracy": 0.439
+        },
+        {
+          "epoch": 6,
+          "step": 8970,
+          "seconds": 461.0,
+          "train_perplexity": 6.826,
+          "valid_perplexity": 5.934,
+          "train_accuracy": 0.403,
+          "valid_accuracy": 0.445
+        }
+      ],
+      "tensors_checked": 472,
+      "quality_accepted": false,
+      "four_gate_certified": false,
+      "scope": "Completeness and finiteness only; does not establish numerical equivalence or convergence."
+    }
+  },
+  "candidate": {
+    "RESULT": {
+      "status": "PROCESS_COMPLETED",
+      "process_seconds": 2154.895137514919,
+      "four_gate_certified": false,
+      "quality_accepted": false,
+      "scope": "Process wall time including cold compile, data loading, validation and checkpoint writing; not a speedup result."
+    },
+    "AUDIT": {
+      "status": "COMPLETE_FINITE_ARTIFACTS",
+      "epochs": [
+        {
+          "epoch": 1,
+          "step": 1493,
+          "seconds": 416.9,
+          "train_perplexity": 13.24,
+          "valid_perplexity": 9.744,
+          "train_accuracy": 0.204,
+          "valid_accuracy": 0.293
+        },
+        {
+          "epoch": 2,
+          "step": 2986,
+          "seconds": 192.0,
+          "train_perplexity": 9.766,
+          "valid_perplexity": 8.518,
+          "train_accuracy": 0.293,
+          "valid_accuracy": 0.338
+        },
+        {
+          "epoch": 3,
+          "step": 4482,
+          "seconds": 200.9,
+          "train_perplexity": 8.541,
+          "valid_perplexity": 6.94,
+          "train_accuracy": 0.335,
+          "valid_accuracy": 0.4
+        },
+        {
+          "epoch": 4,
+          "step": 5978,
+          "seconds": 193.2,
+          "train_perplexity": 7.577,
+          "valid_perplexity": 6.455,
+          "train_accuracy": 0.373,
+          "valid_accuracy": 0.421
+        },
+        {
+          "epoch": 5,
+          "step": 7474,
+          "seconds": 224.4,
+          "train_perplexity": 7.109,
+          "valid_perplexity": 5.964,
+          "train_accuracy": 0.391,
+          "valid_accuracy": 0.442
+        },
+        {
+          "epoch": 6,
+          "step": 8970,
+          "seconds": 192.1,
+          "train_perplexity": 6.819,
+          "valid_perplexity": 5.884,
+          "train_accuracy": 0.404,
+          "valid_accuracy": 0.447
+        }
+      ],
+      "tensors_checked": 472,
+      "quality_accepted": false,
+      "four_gate_certified": false,
+      "scope": "Completeness and finiteness only; does not establish numerical equivalence or convergence."
+    }
+  },
+  "reference2": {
+    "RESULT": {
+      "status": "PROCESS_COMPLETED",
+      "process_seconds": 3316.1816064342856,
+      "four_gate_certified": false,
+      "quality_accepted": false,
+      "scope": "Process wall time including cold compile, data loading, validation and checkpoint writing; not a speedup result."
+    },
+    "AUDIT": {
+      "status": "COMPLETE_FINITE_ARTIFACTS",
+      "epochs": [
+        {
+          "epoch": 1,
+          "step": 1493,
+          "seconds": 476.7,
+          "train_perplexity": 13.247,
+          "valid_perplexity": 9.668,
+          "train_accuracy": 0.204,
+          "valid_accuracy": 0.295
+        },
+        {
+          "epoch": 2,
+          "step": 2986,
+          "seconds": 437.8,
+          "train_perplexity": 9.755,
+          "valid_perplexity": 8.111,
+          "train_accuracy": 0.294,
+          "valid_accuracy": 0.353
+        },
+        {
+          "epoch": 3,
+          "step": 4482,
+          "seconds": 442.4,
+          "train_perplexity": 8.53,
+          "valid_perplexity": 6.95,
+          "train_accuracy": 0.335,
+          "valid_accuracy": 0.398
+        },
+        {
+          "epoch": 4,
+          "step": 5978,
+          "seconds": 464.7,
+          "train_perplexity": 7.57,
+          "valid_perplexity": 6.416,
+          "train_accuracy": 0.373,
+          "valid_accuracy": 0.424
+        },
+        {
+          "epoch": 5,
+          "step": 7474,
+          "seconds": 443.6,
+          "train_perplexity": 7.112,
+          "valid_perplexity": 6.007,
+          "train_accuracy": 0.391,
+          "valid_accuracy": 0.441
+        },
+        {
+          "epoch": 6,
+          "step": 8970,
+          "seconds": 470.7,
+          "train_perplexity": 6.821,
+          "valid_perplexity": 5.897,
+          "train_accuracy": 0.404,
+          "valid_accuracy": 0.446
+        }
+      ],
+      "tensors_checked": 472,
+      "quality_accepted": false,
+      "four_gate_certified": false,
+      "scope": "Completeness and finiteness only; does not establish numerical equivalence or convergence."
+    }
+  }
+}

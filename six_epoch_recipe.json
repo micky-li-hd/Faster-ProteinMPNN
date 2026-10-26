@@ -1,0 +1,25 @@
+{
+  "schema": "proteinmpnn-long-training-v1",
+  "status": "SIX_EPOCH_REAL_RECIPE_COMPARISON_NOT_FULL_CONVERGENCE",
+  "upstream_commit": "8907e6671bfbfc92303b5f79c4b5e6ce47cdef57",
+  "seed": 20261021,
+  "training": {
+    "num_epochs": 6,
+    "save_model_every_n_epochs": 10,
+    "reload_data_every_n_epochs": 2,
+    "num_examples_per_epoch": 1000000,
+    "batch_size": 10000,
+    "max_protein_length": 10000,
+    "hidden_dim": 128,
+    "num_encoder_layers": 3,
+    "num_decoder_layers": 3,
+    "num_neighbors": 48,
+    "dropout": 0.1,
+    "backbone_noise": 0.2,
+    "rescut": 3.5,
+    "gradient_norm": -1.0
+  },
+  "data_url": "https://files.ipd.uw.edu/pub/training_sets/pdb_2021aug02.tar.gz",
+  "precision": "upstream mixed_precision=True; no TF32 changes",
+  "acceptance": "No new numerical margin is declared by this recipe. Preserve existing short-trajectory gates; long-training quality requires independent baseline calibration before candidate selection."
+}
