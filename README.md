@@ -47,15 +47,6 @@ The shared lock must match the lock used by other experiments. The launcher reje
 
 The archive contains pinned reference/candidate training code, dependency versions, source hashes, the launcher, audit code, startup checks and the original 150-epoch recipe. Its internal README predates this six-epoch experiment; this root README and evidence files describe the latest completed results. No data or weights are redistributed.
 
-## Provenance and limits
-
-- Upstream commit: `8907e6671bfbfc92303b5f79c4b5e6ce47cdef57`.
-- Candidate model_utils.py SHA256: `df80b1bd880cacfa783f87d52f0f1b2d29808966313133b66fcdcd4386020fe9`.
-- Runtime archive SHA256: `a42d7128a3d96de8de1ef19873d3fc665cdcc23db480689cf60b3b5aca22d898`.
-- Full data archive observed SHA256: `84d51d0b9224011db8deeab8b83e96f092830aaf6a1f538b1d94b0144f295714` (locally recorded, not an independently published upstream checksum).
-- Earlier scoped experiments, numerical diagnostics and inference cases: [protein-infra-cases](https://github.com/micky-li-hd/protein-infra-cases). Its 2.13× steady-state benchmark used a smaller workload and is not pooled with this experiment.
-- Earlier launcher pickling failure was fixed and retained in the experiment history. A separate time-limited reference run is excluded from the three-process comparison.
-- No full 150-epoch convergence, held-out biological quality equivalence, or ResearchBoost frozen-judge PASS is claimed. No acceptance margin was relaxed.
 
 ## Acknowledgements
 
