@@ -4,6 +4,27 @@ Infrastructure acceleration of [ProteinMPNN](https://github.com/dauparas/Protein
 
 **Status: external exploratory case; not ResearchBoost four-gate certified.** The completed experiment covers six epochs, not the full 150-epoch recipe or a convergence guarantee.
 
+## Agent Optimization History
+
+Measured on **one A100 SXM4 40 GB**, using the official full dataset and the same per-epoch training recipe in all three runs. The figure follows the visual organization of the Faster-* case studies: implementation milestones, measured outcomes and explicit validation status.
+
+![ProteinMPNN optimization milestones and six-epoch training timings](optimization-history.png)
+
+The plot shows **training epochs, not optimization rounds**. We do not have comparable, accepted per-change measurements for every historical candidate, so we do not invent a cumulative round-by-round speedup curve. The four cards summarize the development sequence; they are not isolated ablations.
+
+| Stage | Change / experiment | Recorded outcome |
+| --- | --- | --- |
+| 01 — recomputation | Call the original encoder/decoder layers directly, removing activation checkpoint recomputation | Retained in the final candidate; trades activation memory for less backward recomputation |
+| 02 — compilation and masks | Explore full/region compilation and inverse decoding-order comparisons | Early static compilation reached a recompile limit; dynamic-shape compilation was pursued |
+| 03 — numerical behavior | Inspect RNG and low-precision cast boundaries in generated code | Early flag-only attempts did not preserve all boundaries; a configuration-type failure was retained before repair |
+| 04 — data transfer | Group feature transfers by dtype and combine with the compiled candidate | Final combined implementation; no per-change gain is inferred |
+| Validation — small fixture | Three independent R–C–R groups plus short numerical trajectories | **2.13× steady-state** on the smaller fixture; cold short process was slower. This is a different workload from the six-epoch run |
+| Validation — full dataset | Six complete epochs per arm, reference → candidate → reference | **1.54× whole-process**, **2.25× mean epoch time for epochs 2–6**; finite checkpoints and observed validation metrics, without four-gate certification |
+
+[Implementation-history records](optimization-history.json) · [Plot source](plot_history.py) · [Vector figure](optimization-history.svg) · [Earlier fixture evidence](https://github.com/micky-li-hd/protein-infra-cases/blob/main/proteinmpnn-training.json)
+
+The same final candidate was used throughout the six-epoch comparison. The first candidate epoch includes cold-start effects. Whole-process timing and native epoch timing have different boundaries and are reported separately below.
+
 ## Results
 
 One NVIDIA A100 SXM4 40 GB, Python 3.12.11, PyTorch 2.5.1+cu121. The official full dataset and v_48_020 per-epoch settings were retained; the experiment was bounded to six epochs from scratch. Runs were sequential reference → candidate → reference, with isolated cold compiler caches. Each completed 8,970 optimizer updates.

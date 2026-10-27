@@ -1,0 +1,67 @@
+{
+  "scope": "Selected implementation milestones, not an exhaustive candidate count or cumulative speedup series. Extracted historical records; no internal server paths included.",
+  "records": [
+    {
+      "record": "training_round3/MEASUREMENT.json",
+      "sha256": "df377facd628a3944909c6184070f9ba5a48627f7d1ee96c739ff0d470e75f9b",
+      "extract": {
+        "candidate": "Checkpoint-only: direct calls to original 3 encoder and 3 decoder layers; original unused mask still constructed"
+      }
+    },
+    {
+      "record": "training_round6/SCREEN.json",
+      "sha256": "17898359ed662b5d8afd8e1662ec5b6836b534db017a19f12d17edda90016341",
+      "extract": {
+        "purpose": "Rank implementation directions only; simultaneous/cold/compiling screens are never accepted speedups.",
+        "variants": [
+          "reference",
+          "checkpoint",
+          "dynamic_full",
+          "dynamic_regions",
+          "neighbor_factorized_regions"
+        ],
+        "predecessor_findings": "Round4 full compile failed at cache_size_limit=8 after length guards; no limit increase or suppressed fallback is used here. Round5 factorized_full was not launched."
+      }
+    },
+    {
+      "record": "training_round8_precision/SCREEN.json",
+      "sha256": "e5b590bc38b8f21c1cc599dde7bcbccd96872ab064c510d9cd89af966b0432af",
+      "extract": {
+        "purpose": "Rank implementation directions only; simultaneous/cold/compiling screens are never accepted speedups.",
+        "variants": [
+          "reference",
+          "checkpoint",
+          "dynamic_precision_no_pm"
+        ],
+        "predecessor_findings": "Round7 flags alone preserved some pointwise casts but did not preserve encoder W3 and W_out addmm boundaries. Its prepared numerical validation was explicitly not launched; discovery is retained."
+      }
+    },
+    {
+      "record": "training_round10_cast_barriers/SCREEN.json",
+      "sha256": "deb0323821fa61898142985f310901f2138c0f3044b837f96a2dd312ba3b2495",
+      "extract": {
+        "purpose": "Rank implementation directions only; simultaneous/cold/compiling screens are never accepted speedups.",
+        "variants": [
+          "reference",
+          "checkpoint",
+          "dynamic_cast_barriers"
+        ],
+        "predecessor_findings": "Round9 failed before GPU execution: torch.compile options validates this callable against NoneType. Preserve that failure; round10 uses the documented direct config assignment active during lazy forward/backward compilation."
+      }
+    },
+    {
+      "record": "training_round11_packed_features/SCREEN.json",
+      "sha256": "d19eb2a6167908ea07f397ff19b94b6f94012989ab996441cf0e6093d0be0300",
+      "extract": {
+        "purpose": "Rank implementation directions only; simultaneous/cold/compiling screens are never accepted speedups.",
+        "variants": [
+          "reference",
+          "checkpoint",
+          "packed_checkpoint",
+          "packed_compile"
+        ],
+        "predecessor_findings": "Round9 failed before GPU execution: torch.compile options validates this callable against NoneType. Preserve that failure; round10 uses the documented direct config assignment active during lazy forward/backward compilation."
+      }
+    }
+  ]
+}
