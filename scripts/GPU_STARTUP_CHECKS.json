@@ -1,0 +1,60 @@
+{
+  "scope": "Startup validation only; not speedup or quality acceptance",
+  "wrapper_fix": "Import seeded_entry.main rather than invoking callbacks defined in __main__ while runpy replaces it",
+  "arms": {
+    "reference": {
+      "RESULT": {
+        "status": "PROCESS_COMPLETED",
+        "process_seconds": 37.46355908922851,
+        "four_gate_certified": false,
+        "quality_accepted": false,
+        "scope": "Process wall time including cold compile, data loading, validation and checkpoint writing; not a speedup result."
+      },
+      "AUDIT": {
+        "status": "COMPLETE_FINITE_ARTIFACTS",
+        "epochs": [
+          {
+            "epoch": 1,
+            "step": 5,
+            "seconds": 1.4,
+            "train_perplexity": 51.129,
+            "valid_perplexity": 46.092,
+            "train_accuracy": 0.057,
+            "valid_accuracy": 0.051
+          }
+        ],
+        "tensors_checked": 472,
+        "quality_accepted": false,
+        "four_gate_certified": false,
+        "scope": "Completeness and finiteness only; does not establish numerical equivalence or convergence."
+      }
+    },
+    "candidate": {
+      "RESULT": {
+        "status": "PROCESS_COMPLETED",
+        "process_seconds": 143.01097687147558,
+        "four_gate_certified": false,
+        "quality_accepted": false,
+        "scope": "Process wall time including cold compile, data loading, validation and checkpoint writing; not a speedup result."
+      },
+      "AUDIT": {
+        "status": "COMPLETE_FINITE_ARTIFACTS",
+        "epochs": [
+          {
+            "epoch": 1,
+            "step": 5,
+            "seconds": 107.5,
+            "train_perplexity": 51.13,
+            "valid_perplexity": 46.092,
+            "train_accuracy": 0.057,
+            "valid_accuracy": 0.051
+          }
+        ],
+        "tensors_checked": 472,
+        "quality_accepted": false,
+        "four_gate_certified": false,
+        "scope": "Completeness and finiteness only; does not establish numerical equivalence or convergence."
+      }
+    }
+  }
+}

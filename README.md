@@ -53,20 +53,21 @@ The native model, loss, optimizer and per-epoch configuration are preserved. Bot
 ```bash
 git clone https://github.com/micky-li-hd/Faster-ProteinMPNN.git
 cd Faster-ProteinMPNN
-tar -xzf proteinmpnn-training-runtime.tar.gz
 python3.12 -m venv .venv
-.venv/bin/python -m pip install -r proteinmpnn-runtime/requirements.txt
+.venv/bin/python -m pip install -r requirements.txt
 ```
 
 Download the full public dataset using the [pinned upstream training instructions](https://github.com/dauparas/ProteinMPNN/blob/8907e6671bfbfc92303b5f79c4b5e6ce47cdef57/training/README.md). Then run on an assigned, idle GPU:
 
 ```bash
-PYTHON="$PWD/.venv/bin/python" bash run_six_epoch.sh /data/pdb_2021aug02 /shared/gpu_experiments.lock 0
+PYTHON="$PWD/.venv/bin/python" bash scripts/run_six_epoch.sh /data/pdb_2021aug02 /shared/gpu_experiments.lock 0
 ```
 
 The shared lock must match the lock used by other experiments. The launcher rejects a busy GPU, preserves failures and cleans only its owned processes. Each arm has a 7,200-second resource bound; a timeout is not counted as completion. Results go into a fresh `runs-six-epoch` directory. The script refuses to reuse it.
 
-The archive contains pinned reference/candidate training code, dependency versions, source hashes, the launcher, audit code, startup checks and the original 150-epoch recipe. Its internal README predates this six-epoch experiment; this root README and evidence files describe the latest completed results. No data or weights are redistributed.
+The optimized implementation is directly browsable in [`training/model_utils.py`](training/model_utils.py). The upstream source tree is pinned to [`8907e6671bfbfc92303b5f79c4b5e6ce47cdef57`](https://github.com/dauparas/ProteinMPNN/tree/8907e6671bfbfc92303b5f79c4b5e6ce47cdef57), with the original README preserved as [`README.upstream.md`](README.upstream.md). The original training modules for the reference arm are in [`reference/training/`](reference/training/); both arms use the same seeding and audit wrappers under [`scripts/`](scripts/). No archive extraction or patch application is needed.
+
+The upstream examples and pretrained/example checkpoint files are retained unchanged. The full training dataset and checkpoints produced by our experiments are not included. The original 150-epoch recipe and historical startup checks are retained under `scripts/`; they are not evidence that 150 epochs completed. This layout-only revision preserves the published candidate/reference module hashes and six-epoch evidence. See [`SOURCE_LAYOUT.json`](SOURCE_LAYOUT.json) for provenance.
 
 
 ## Acknowledgements

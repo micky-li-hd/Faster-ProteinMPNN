@@ -1,0 +1,13 @@
+{
+  "status": "PASS_CPU_ONLY",
+  "checks": [
+    "python_syntax",
+    "six_source_hashes",
+    "native_training_and_utils_identical",
+    "candidate_identity",
+    "empty_validation_split_rejected",
+    "debug_recipe_override_rejected"
+  ],
+  "gpu_executed": false,
+  "four_gate_certified": false
+}

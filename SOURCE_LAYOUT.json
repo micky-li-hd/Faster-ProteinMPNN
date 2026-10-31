@@ -1,0 +1,16 @@
+{
+  "upstream_repository": "https://github.com/dauparas/ProteinMPNN",
+  "upstream_commit": "8907e6671bfbfc92303b5f79c4b5e6ce47cdef57",
+  "upstream_files": 109,
+  "upstream_readme": "README.upstream.md",
+  "modified_upstream_files": [
+    "training/model_utils.py",
+    ".gitignore"
+  ],
+  "reference_training": "reference/training",
+  "candidate_training": "training",
+  "published_runtime_archive_sha256": "a42d7128a3d96de8de1ef19873d3fc665cdcc23db480689cf60b3b5aca22d898",
+  "layout_revision_only": true,
+  "source_bindings": "scripts/source_manifest.json",
+  "historical_evidence_unchanged": true
+}
